@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import requests
 import base64 
 import json
@@ -8,12 +8,20 @@ import json
 # ------------------------------------
 # Read constants from environment file
 # ------------------------------------
-load_dotenv()
-COGNITO_DOMAIN = os.environ.get("COGNITO_DOMAIN")
-print(COGNITO_DOMAIN)
-CLIENT_ID = os.environ.get("CLIENT_ID")
-CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
-APP_URI = os.environ.get("APP_URI") 
+# load_dotenv()
+# COGNITO_DOMAIN = st.secrets.credentials.COGNITO_DOMAIN
+# # print(COGNITO_DOMAIN)
+# CLIENT_ID = st.secrets.credentials.CLIENT_ID
+# CLIENT_SECRET = st.secrets.credentials.CLIENT_SECRET
+# APP_URI = st.secrets.credentials.APP_URI
+
+# COGNITO_DOMAIN = os.environ.get("COGNITO_DOMAIN")
+# print("helloslas::::::::", COGNITO_DOMAIN)
+COGNITO_DOMAIN = st.secrets.get("COGNITO_DOMAIN")
+CLIENT_ID = st.secrets.get("CLIENT_ID")
+CLIENT_SECRET = st.secrets.get("CLIENT_SECRET")
+APP_URI = st.secrets.get("APP_URI") 
+
 
 
 
